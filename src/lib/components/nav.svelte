@@ -1,6 +1,6 @@
 <script>
 	let navItems = [
-		{ name: 'Offen', link: '/' },
+		{ name: 'Offen', link: '/start' },
 		{ name: 'Abgeschlossen', link: '/abgeschlossen' }
 	];
 </script>
