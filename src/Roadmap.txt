@@ -1,0 +1,14 @@
+Roadmap
+
+- Projektstruktur aufsetzen
+- Layout erstellen
+- 
+
+
+
+
+
+
+
+Positiv:
+- Layout Dateien leicht zuerstellen und können für verschiedene Routen erzeugt werden
