@@ -4,12 +4,12 @@
 	import { TodosStore } from '../../store/+store';
 
 	let todos: Todo[] = [];
-	TodosStore?.subscribe((value) => (todos = value));
+	TodosStore?.subscribe((value) => (todos = value.open));
 </script>
 
 <main>
-	{#each todos as todo, index}
-		<TodoItem {todo} {index}></TodoItem>
+	{#each todos as todo}
+		<TodoItem {todo}></TodoItem>
 	{/each}
 </main>
 

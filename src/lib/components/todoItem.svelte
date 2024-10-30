@@ -1,30 +1,35 @@
 <script lang="ts">
 	import type { Todo } from '../../model';
-	import { toggleTodoCompletion } from '../../store/+store';
+	import { selectTodo } from '../../store/+store';
 
-	export let todo: Todo;
-	export let index: number;
-	let selected = false;
+	let { todo }: { todo: Todo } = $props();
+
+	function toggleSelection(): void {
+		selectTodo(todo);
+	}
 </script>
 
-<button onclick={() => toggleTodoCompletion(index)}>
-	<div class="flex items-center">
-		&#8203;
-		<input
-			type="checkbox"
-			class="size-4 rounded border-gray-300 dark:border-gray-600 dark:bg-gray-800 dark:ring-offset-gray-900"
-			id="checkbox"
-			onclick={() => toggleTodoCompletion(index)}
-			bind:checked={selected}
-		/>
-	</div>
+<div class="flex w-full border-b-2 p-2 text-left">
+	{#if !todo.completed}
+		<!-- content here -->
+		<div class="me-4 ms-2 flex items-center">
+			&#8203;
+			<input
+				type="checkbox"
+				class="size-4 rounded border-gray-300 dark:border-gray-600 dark:bg-gray-800 dark:ring-offset-gray-900"
+				id="checkbox"
+				onclick={() => toggleSelection()}
+				bind:checked={todo.selected}
+			/>
+		</div>
+	{/if}
 	<div>
-		<strong class="font-medium text-gray-900"> {index} {todo.title} </strong>
+		<strong class="font-medium text-gray-900"> {todo.title} </strong>
 		<p class="mt-1 text-pretty text-sm text-gray-700">
 			{todo.description}
 		</p>
 	</div>
-</button>
+</div>
 
 <style>
 </style>

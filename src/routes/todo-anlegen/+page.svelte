@@ -1,9 +1,9 @@
 <script lang="ts">
 	import Button from '$lib/components/button.svelte';
 	import { Todo } from '../../model';
-	import { addTodo, todos } from '../../store/+store';
-	todos;
-	const todo: Todo = $state({ title: '', description: '', completed: false });
+	import { addTodo } from '../../store/+store';
+
+	const todo: Todo = $state({ title: '', description: '', completed: false, selected: false });
 </script>
 
 <div class="mx-auto max-w-screen-xl px-4 sm:px-6 lg:px-8">

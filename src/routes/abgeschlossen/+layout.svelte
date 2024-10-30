@@ -7,7 +7,7 @@
 	let { children } = $props();
 </script>
 
-<Header title="Offene Todos" />
+<Header title="Abgeschlossene Aufgaben" />
 <Searchbar />
 
 {@render children()}

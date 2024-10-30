@@ -1,10 +1,15 @@
+<script>
+	let search = $state('');
+</script>
+
 <div class="relative">
-	<label for="Search" class="sr-only"> Neue Aufgabe hinzufügen </label>
+	<label for="search" class="sr-only"> Neue Aufgabe hinzufügen </label>
 
 	<input
 		type="text"
-		id="Search"
-		placeholder="Search for..."
+		id="search"
+		placeholder="Suche nach..."
+		bind:value={search}
 		class="w-full rounded-md border-gray-200 py-2.5 pe-10 shadow-sm sm:text-sm"
 	/>
 
