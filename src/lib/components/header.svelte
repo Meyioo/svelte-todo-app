@@ -14,7 +14,7 @@
 			</div>
 
 			<div class="flex items-center gap-4">
-				<ButtonLink href="/todo-anlegen" label="+ Neu"></ButtonLink>
+				<ButtonLink href="/todo-anlegen" label="Neu"></ButtonLink>
 			</div>
 		</div>
 	</div>

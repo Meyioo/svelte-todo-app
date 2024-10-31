@@ -6,6 +6,6 @@
 
 <a
 	{href}
-	class="inline-block w-full rounded-lg bg-blue-500 px-5 py-3 text-sm font-medium text-white"
+	class="inline-block w-full rounded-lg bg-blue-700 px-5 py-3 text-sm font-medium text-white"
 	>{label}
 </a>
