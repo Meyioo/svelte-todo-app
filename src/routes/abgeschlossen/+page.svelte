@@ -15,7 +15,9 @@
 	$: filteredTodos =
 		search.length > 0
 			? completedTodos.filter(
-					(todo) => todo.title.includes(search) || todo.description.includes(search)
+					(todo) =>
+						todo.title.toLowerCase().includes(search.toLowerCase()) ||
+						todo.description.toLowerCase().includes(search.toLowerCase())
 				)
 			: completedTodos;
 

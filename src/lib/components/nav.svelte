@@ -2,8 +2,8 @@
 	import { closeSelectedTodos } from '../../store/+store';
 </script>
 
-<div class="absolute bottom-0 flex w-full items-center justify-center pt-5">
-	<div class="mx-auto w-full max-w-md">
+<div class="fixed bottom-0 w-full pt-5">
+	<div class="mx-auto w-full">
 		<div class=" bg-white px-7 shadow-lg">
 			<div class="flex">
 				<div class="group flex-1">

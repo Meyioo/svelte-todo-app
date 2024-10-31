@@ -10,7 +10,7 @@ export class TodoStore {
 // Helper function to sync with localStorage
 function createPersistedStore(key: string, initialValue: TodoStore): Writable<TodoStore> {
 	if (!browser) {
-		return writable(initialValue);
+		return writable(new TodoStore());
 	}
 
 	const storedValue = localStorage.getItem(key);
@@ -41,6 +41,67 @@ export const TodosStore = createPersistedStore('todos', {
 		{
 			title: 'Fitnessstudio besuchen',
 			description: '1 Stunde Ausdauer und Krafttraining',
+			completed: false,
+			selected: false
+		},
+
+		{
+			title: 'Einkaufen gehen',
+			description: 'Lebensmittel und Haushaltswaren besorgen',
+			completed: false,
+			selected: false
+		},
+		{
+			title: 'Arzttermin wahrnehmen',
+			description: 'Jährliche Gesundheitsuntersuchung',
+			completed: false,
+			selected: false
+		},
+		{
+			title: 'E-Mails bearbeiten',
+			description: 'Alle wichtigen E-Mails durchgehen und beantworten',
+			completed: false,
+			selected: false
+		},
+		{
+			title: 'Projektbericht schreiben',
+			description: 'Fortschrittsbericht für das aktuelle Projekt erstellen',
+			completed: false,
+			selected: false
+		},
+		{
+			title: 'Wohnung putzen',
+			description: 'Staubsaugen und Oberflächen abwischen',
+			completed: false,
+			selected: false
+		},
+		{
+			title: 'Freunde treffen',
+			description: 'Treffen zum Abendessen vereinbaren',
+			completed: false,
+			selected: false
+		},
+		{
+			title: 'Rechnung bezahlen',
+			description: 'Telefon- und Internetrechnung begleichen',
+			completed: false,
+			selected: false
+		},
+		{
+			title: 'Buch lesen',
+			description: 'Kapitel 4 des aktuellen Buches durchlesen',
+			completed: false,
+			selected: false
+		},
+		{
+			title: 'Joggen gehen',
+			description: '30 Minuten joggen im Park',
+			completed: false,
+			selected: false
+		},
+		{
+			title: 'Familie anrufen',
+			description: 'Kurzes Gespräch mit den Eltern führen',
 			completed: false,
 			selected: false
 		}

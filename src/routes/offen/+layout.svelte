@@ -1,15 +1,17 @@
 <script>
 	import Header from '$lib/components/header.svelte';
 	import Nav from '$lib/components/nav.svelte';
-	import Searchbar from '$lib/components/searchbar.svelte';
 	import '../../app.css';
 
 	let { children } = $props();
 </script>
 
-<Header title="Offene Aufgaben" />
-<Searchbar />
+<div class="container">
+	<Header title="Offene Aufgaben" />
 
-{@render children()}
+	<div class="mb-32 mt-40 flex-1 overflow-y-auto">
+		{@render children()}
+	</div>
 
-<Nav />
+	<Nav />
+</div>

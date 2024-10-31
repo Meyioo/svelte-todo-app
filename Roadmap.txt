@@ -1,15 +1,9 @@
-Roadmap
-
-- Projektstruktur aufsetzen
-- Layout erstellen
-- 
-
-
-
-
-
-
-
 Positiv:
 - Layout Dateien leicht zuerstellen und können für verschiedene Routen erzeugt werden
 - Store ist so einfach wie nie zu erstellen
+- Maximale Freiheit für Projektstruktur
+
+
+
+Negativ:
+- Subscription Handling aufwendig

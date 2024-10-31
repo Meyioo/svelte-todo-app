@@ -14,7 +14,11 @@
 
 	$: filteredTodos =
 		search.length > 0
-			? todos.filter((todo) => todo.title.includes(search) || todo.description.includes(search))
+			? todos.filter(
+					(todo) =>
+						todo.title.toLowerCase().includes(search.toLowerCase()) ||
+						todo.description.toLowerCase().includes(search.toLowerCase())
+				)
 			: todos;
 
 	onDestroy(() => subscriptions.forEach((subscription) => subscription()));
