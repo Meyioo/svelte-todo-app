@@ -1,12 +1,16 @@
 <script lang="ts">
 	import TodoItem from '$lib/components/todoItem.svelte';
+	import { onDestroy } from 'svelte';
+	import type { Unsubscriber } from 'svelte/motion';
 	import type { Todo } from '../../model';
 	import { SearchStore, TodosStore } from '../../store/+store';
 
 	let completedTodos: Todo[] = [];
 	let search = '';
-	TodosStore?.subscribe((value) => (completedTodos = value.completed));
-	SearchStore?.subscribe((value) => (search = value));
+	const subscriptions: Unsubscriber[] = [];
+
+	subscriptions.push(TodosStore?.subscribe((value) => (completedTodos = value.completed)));
+	subscriptions.push(SearchStore?.subscribe((value) => (search = value)));
 
 	$: filteredTodos =
 		search.length > 0
@@ -14,6 +18,8 @@
 					(todo) => todo.title.includes(search) || todo.description.includes(search)
 				)
 			: completedTodos;
+
+	onDestroy(() => subscriptions.forEach((subscription) => subscription()));
 </script>
 
 <main>

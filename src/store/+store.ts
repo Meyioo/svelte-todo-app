@@ -8,9 +8,9 @@ export class TodoStore {
 }
 
 // Helper function to sync with localStorage
-function createPersistedStore(key: string, initialValue: TodoStore): Writable<TodoStore> | null {
+function createPersistedStore(key: string, initialValue: TodoStore): Writable<TodoStore> {
 	if (!browser) {
-		return null;
+		return writable(initialValue);
 	}
 
 	const storedValue = localStorage.getItem(key);

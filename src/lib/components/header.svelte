@@ -1,7 +1,8 @@
 <script lang="ts">
+	import type { IHeaderProps } from '../../model';
 	import ButtonLink from './button-link.svelte';
 
-	export let title: string;
+	let { title }: IHeaderProps = $props();
 </script>
 
 <header class="border-b border-gray-200 bg-gray-50">

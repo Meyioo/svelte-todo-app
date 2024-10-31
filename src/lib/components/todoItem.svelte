@@ -1,8 +1,8 @@
 <script lang="ts">
-	import type { Todo } from '../../model';
+	import type { ITodoItemProps } from '../../model';
 	import { selectTodo } from '../../store/+store';
 
-	let { todo }: { todo: Todo } = $props();
+	let { todo }: ITodoItemProps = $props();
 
 	function toggleSelection(): void {
 		selectTodo(todo);
@@ -11,15 +11,13 @@
 
 <div class="flex w-full border-b-2 p-2 text-left">
 	{#if !todo.completed}
-		<!-- content here -->
 		<div class="me-4 ms-2 flex items-center">
-			&#8203;
 			<input
 				type="checkbox"
 				class="size-4 rounded border-gray-300 dark:border-gray-600 dark:bg-gray-800 dark:ring-offset-gray-900"
 				id="checkbox"
 				onclick={() => toggleSelection()}
-				bind:checked={todo.selected}
+				checked={todo.selected}
 			/>
 		</div>
 	{/if}

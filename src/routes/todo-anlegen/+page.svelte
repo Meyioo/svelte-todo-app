@@ -1,6 +1,6 @@
 <script lang="ts">
 	import Button from '$lib/components/button.svelte';
-	import { Todo } from '../../model';
+	import type { Todo } from '../../model';
 	import { addTodo } from '../../store/+store';
 
 	const todo: Todo = $state({ title: '', description: '', completed: false, selected: false });
@@ -37,7 +37,7 @@
 		</div>
 
 		<div class="flex items-center justify-between">
-			<Button label="Aufgabe anlegen" type="submit" onclick={addTodo(todo)}></Button>
+			<Button label="Aufgabe anlegen" type="submit" onclick={() => addTodo(todo)}></Button>
 		</div>
 	</form>
 </div>
