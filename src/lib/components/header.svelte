@@ -3,7 +3,7 @@
 	import ButtonLink from './button-link.svelte';
 	import Searchbar from './searchbar.svelte';
 
-	let { title }: IHeaderProps = $props();
+	let { title, showSearch = false }: IHeaderProps = $props();
 </script>
 
 <header class="fixed top-0 w-full border-b border-gray-200 bg-gray-50">
@@ -18,5 +18,7 @@
 			</div>
 		</div>
 	</div>
-	<Searchbar />
+	{#if showSearch}
+		<Searchbar />
+	{/if}
 </header>

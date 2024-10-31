@@ -1,9 +1,14 @@
 <script lang="ts">
 	import Button from '$lib/components/button.svelte';
 	import type { Todo } from '../../model';
-	import { addTodo } from '../../store/+store';
+	import { addTodo } from '../../store/+todo.store';
+	import { showToast } from '../../store/toast.store';
 
 	const todo: Todo = $state({ title: '', description: '', completed: false, selected: false });
+	function submit() {
+		showToast('Formular erfolgreich abgeschickt!');
+		addTodo(todo);
+	}
 </script>
 
 <div class="mx-auto max-w-screen-xl px-4 sm:px-6 lg:px-8">
@@ -37,7 +42,12 @@
 		</div>
 
 		<div class="flex items-center justify-between">
-			<Button label="Aufgabe anlegen" type="submit" onclick={() => addTodo(todo)}></Button>
+			<Button
+				label="Aufgabe anlegen"
+				type="submit"
+				disabled={!todo.title || !todo.description}
+				onclick={() => submit()}
+			></Button>
 		</div>
 	</form>
 </div>

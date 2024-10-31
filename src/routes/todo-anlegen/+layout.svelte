@@ -6,8 +6,12 @@
 	let { children } = $props();
 </script>
 
-<Header title="Aufgabe anlegen" />
+<div class="container">
+	<Header title="Aufgabe anlegen" />
 
-{@render children()}
+	<div class="mb-32 mt-40 flex-1 overflow-y-auto">
+		{@render children()}
+	</div>
 
-<Nav />
+	<Nav />
+</div>

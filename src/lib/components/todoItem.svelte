@@ -1,6 +1,6 @@
 <script lang="ts">
 	import type { ITodoItemProps } from '../../model';
-	import { selectTodo } from '../../store/+store';
+	import { selectTodo } from '../../store/+todo.store';
 
 	let { todo }: ITodoItemProps = $props();
 

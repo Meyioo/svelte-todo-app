@@ -3,7 +3,7 @@
 	import { onDestroy } from 'svelte';
 	import type { Unsubscriber } from 'svelte/motion';
 	import type { Todo } from '../../model';
-	import { SearchStore, TodosStore } from '../../store/+store';
+	import { SearchStore, TodosStore } from '../../store/+todo.store';
 
 	let completedTodos: Todo[] = [];
 	let search = '';

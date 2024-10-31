@@ -1,12 +1,13 @@
 <script lang="ts">
 	import type { IButtonProps } from '../../model';
 
-	let { type, onclick, label }: IButtonProps = $props();
+	let { type, onclick, label, disabled }: IButtonProps = $props();
 </script>
 
 <button
+	class="inline-block w-full rounded-lg bg-blue-700 px-5 py-3 text-sm font-medium text-white disabled:bg-blue-500"
 	{type}
-	class="inline-block w-full rounded-lg bg-blue-500 px-5 py-3 text-sm font-medium text-white"
+	{disabled}
 	{onclick}
 	>{label}
 </button>

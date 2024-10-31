@@ -7,7 +7,7 @@
 </script>
 
 <div class="container">
-	<Header title="Abgeschlossene Aufgaben" />
+	<Header title="Abgeschlossene Aufgaben" showSearch={true} />
 
 	<div class="mb-32 mt-40 flex-1 overflow-y-auto">
 		{@render children()}

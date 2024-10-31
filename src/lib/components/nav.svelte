@@ -1,5 +1,5 @@
 <script>
-	import { closeSelectedTodos } from '../../store/+store';
+	import { closeSelectedTodos } from '../../store/+todo.store';
 </script>
 
 <div class="fixed bottom-0 w-full pt-5">

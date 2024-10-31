@@ -1,5 +1,5 @@
 <script>
-	import { SearchStore } from '../../store/+store';
+	import { SearchStore } from '../../store/+todo.store';
 </script>
 
 <div class="relative">
