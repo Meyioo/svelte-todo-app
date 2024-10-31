@@ -1,5 +1,5 @@
 <script>
-	let search = $state('');
+	import { SearchStore } from '../../store/+store';
 </script>
 
 <div class="relative">
@@ -9,7 +9,7 @@
 		type="text"
 		id="search"
 		placeholder="Suche nach..."
-		bind:value={search}
+		bind:value={$SearchStore}
 		class="w-full rounded-md border-gray-200 py-2.5 pe-10 shadow-sm sm:text-sm"
 	/>
 

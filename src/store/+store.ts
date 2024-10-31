@@ -48,6 +48,8 @@ export const TodosStore = createPersistedStore('todos', {
 	completed: []
 });
 
+export const SearchStore = writable('');
+
 export function addTodo(todo: Todo): void {
 	TodosStore?.update((store) => {
 		store.open.push(todo);
