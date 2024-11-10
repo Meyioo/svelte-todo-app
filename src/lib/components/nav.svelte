@@ -2,13 +2,13 @@
 	import { closeSelectedTodos } from '../../store/+todo.store';
 </script>
 
-<div class="fixed bottom-0 w-full pt-5">
+<div class="sticky bottom-0 w-full pt-5">
 	<div class="mx-auto w-full">
 		<div class=" bg-white px-7 shadow-lg">
 			<div class="flex">
 				<div class="group flex-1">
 					<a
-						href="/offen"
+						href="/"
 						class="mx-auto flex w-full items-end justify-center border-b-2 border-transparent px-4 pt-2 text-center text-gray-400 active:border-indigo-500 active:text-indigo-500"
 					>
 						<span class="block px-1 pb-2 pt-1">

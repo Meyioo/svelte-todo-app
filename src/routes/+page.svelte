@@ -1,9 +1,15 @@
 <script lang="ts">
-	import { browser } from '$app/environment';
-	import { goto } from '$app/navigation';
+	import Header from '$lib/components/header.svelte';
+	import TodoList from '$lib/components/todoList.svelte';
 
-	if (browser) {
-		// if we are in the browser
-		goto('/offen');
-	}
+	const completed = false;
 </script>
+
+<div>
+	<Header title="Offene Aufgaben" showSearch={true} />
+
+	<TodoList {completed} />
+</div>
+
+<style>
+</style>
