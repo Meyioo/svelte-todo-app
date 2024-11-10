@@ -6,7 +6,7 @@
 </script>
 
 <div>
-	<Header title="Offene Aufgaben" showSearch={true} />
+	<Header title="Offene Aufgaben" showSearch={true} showPriorityFilter={true} />
 
 	<TodoList {completed} />
 </div>

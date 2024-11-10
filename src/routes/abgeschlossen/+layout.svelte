@@ -2,7 +2,7 @@
 	import Header from '$lib/components/header.svelte';
 	import '../../app.css';
 
-	let { children } = $props();
+	const { children } = $props();
 </script>
 
 <div class="container">

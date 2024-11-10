@@ -3,21 +3,27 @@
 	import { derived } from 'svelte/store';
 	import type { Todo } from '../../model';
 	import type { ITodoListProps } from '../../model/props.model';
-	import { SearchStore, TodosStore } from '../../store/+todo.store';
+	import { PriorityFilterStore, SearchStore, TodosStore } from '../../store/+todo.store';
 
-	let { completed = false }: ITodoListProps = $props();
+	const { completed = false }: ITodoListProps = $props();
 
-	// abgeleiteter Store zur Filterung der Todos basierend auf dem Suchtext und dem `completed`-Status
-	const todos = derived([TodosStore, SearchStore], ([$TodosStore, $SearchStore]) => {
-		const todos = completed ? $TodosStore.completed : $TodosStore.open;
-		return $SearchStore.length > 0
-			? todos.filter(
-					(todo: Todo) =>
-						todo.title.toLowerCase().includes($SearchStore.toLowerCase()) ||
-						todo.description.toLowerCase().includes($SearchStore.toLowerCase())
-				)
-			: todos;
-	});
+	const todos = derived(
+		[TodosStore, SearchStore, PriorityFilterStore],
+		([$TodosStore, $SearchStore, $PriorityFilterStore]) => {
+			const todos = completed ? $TodosStore.completed : $TodosStore.open;
+
+			return todos.filter((todo: Todo) => {
+				const matchesSearch =
+					$SearchStore.length === 0 ||
+					todo.title.toLowerCase().includes($SearchStore.toLowerCase()) ||
+					todo.description.toLowerCase().includes($SearchStore.toLowerCase());
+
+				const matchesPriority = !$PriorityFilterStore || todo.priority === $PriorityFilterStore;
+
+				return matchesSearch && matchesPriority;
+			});
+		}
+	);
 </script>
 
 <main>

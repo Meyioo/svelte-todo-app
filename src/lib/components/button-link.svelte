@@ -1,7 +1,7 @@
 <script lang="ts">
 	import type { IButtonLinkProps } from '../../model';
 
-	let { href, label }: IButtonLinkProps = $props();
+	const { href, label }: IButtonLinkProps = $props();
 </script>
 
 <a

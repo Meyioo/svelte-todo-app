@@ -1,7 +1,7 @@
 <script lang="ts">
 	import type { IButtonProps } from '../../model';
 
-	let { type, onclick, label, disabled }: IButtonProps = $props();
+	const { type, onclick, label, disabled }: IButtonProps = $props();
 </script>
 
 <button

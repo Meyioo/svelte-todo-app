@@ -2,7 +2,7 @@
 	import type { ITodoItemProps } from '../../model';
 	import { selectTodo } from '../../store/+todo.store';
 
-	let { todo }: ITodoItemProps = $props();
+	const { todo }: ITodoItemProps = $props();
 
 	function toggleSelection(): void {
 		selectTodo(todo);

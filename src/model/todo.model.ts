@@ -1,15 +1,14 @@
-export class Todo {
+export enum PriorityEnum {
+	Low = 'low',
+	Medium = 'medium',
+	High = 'high'
+}
+
+export interface Todo {
 	title: string;
 	description: string;
 	completed: boolean;
 	selected: boolean;
+	priority: PriorityEnum;
 	deadline?: Date | null;
-
-	constructor(title: string, description: string) {
-		this.title = title;
-		this.description = description;
-		this.completed = false;
-		this.selected = false;
-		this.deadline = null;
-	}
 }

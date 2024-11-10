@@ -17,6 +17,7 @@ export interface IButtonProps {
 export interface IHeaderProps {
 	title: string;
 	showSearch?: boolean;
+	showPriorityFilter?: boolean;
 }
 
 export interface ITodoItemProps {
