@@ -2,9 +2,10 @@
 	import TodoItem from '$lib/components/todoItem.svelte';
 	import { derived } from 'svelte/store';
 	import type { Todo } from '../../model';
+	import type { ITodoListProps } from '../../model/props.model';
 	import { SearchStore, TodosStore } from '../../store/+todo.store';
 
-	export let completed = false;
+	let { completed = false }: ITodoListProps = $props();
 
 	// abgeleiteter Store zur Filterung der Todos basierend auf dem Suchtext und dem `completed`-Status
 	const filteredTodos = derived([TodosStore, SearchStore], ([$TodosStore, $SearchStore]) => {

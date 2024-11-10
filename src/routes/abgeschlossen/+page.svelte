@@ -1,10 +1,10 @@
 <script lang="ts">
-	import Todos from '$lib/components/todos.svelte';
+	import TodoList from '$lib/components/todoList.svelte';
 
 	export let completed = true;
 </script>
 
-<Todos {completed} />
+<TodoList {completed} />
 
 <style>
 </style>

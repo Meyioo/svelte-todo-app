@@ -22,3 +22,7 @@ export interface IHeaderProps {
 export interface ITodoItemProps {
 	todo: Todo;
 }
+
+export interface ITodoListProps {
+	completed: boolean;
+}
