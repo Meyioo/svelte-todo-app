@@ -8,7 +8,7 @@
 	let { completed = false }: ITodoListProps = $props();
 
 	// abgeleiteter Store zur Filterung der Todos basierend auf dem Suchtext und dem `completed`-Status
-	const filteredTodos = derived([TodosStore, SearchStore], ([$TodosStore, $SearchStore]) => {
+	const todos = derived([TodosStore, SearchStore], ([$TodosStore, $SearchStore]) => {
 		const todos = completed ? $TodosStore.completed : $TodosStore.open;
 		return $SearchStore.length > 0
 			? todos.filter(
@@ -21,9 +21,13 @@
 </script>
 
 <main>
-	{#each $filteredTodos as todo}
+	{#each $todos as todo}
 		<TodoItem {todo}></TodoItem>
 	{/each}
+
+	{#if $todos.length === 0}
+		<p class="mt-3 text-center text-gray-500">Keine Aufgaben gefunden</p>
+	{/if}
 </main>
 
 <style>

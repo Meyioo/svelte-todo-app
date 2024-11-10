@@ -5,49 +5,43 @@
 	import { showToast } from '../../store/toast.store';
 
 	const todo: Todo = $state({ title: '', description: '', completed: false, selected: false });
-	function submit() {
+
+	const fields = [
+		{ name: 'title', placeholder: 'Titel eingeben', type: 'text' },
+		{ name: 'description', placeholder: 'Beschreibung hinzufügen', type: 'text' },
+		{ name: 'deadline', placeholder: 'Fälligkeitsdatum', type: 'date' }
+	];
+
+	function submit(): void {
 		showToast('Formular erfolgreich abgeschickt!');
 		addTodo(todo);
 	}
 </script>
 
 <div class="mx-auto max-w-screen-xl px-4 sm:px-6 lg:px-8">
-	<form action="#" class="mx-auto mb-0 mt-4 max-w-md space-y-4">
-		<div>
-			<label for="title" class="sr-only">Titel</label>
-
-			<div class="relative">
-				<input
-					type="text"
-					name="title"
-					class="w-full rounded-lg border-gray-200 p-4 pe-12 text-sm shadow-sm"
-					placeholder="Titel eingeben"
-					bind:value={todo.title}
-				/>
+	<form class="mx-auto mt-4 max-w-md space-y-4">
+		{#each fields as field}
+			<div>
+				<label for={field.name} class="sr-only">{field.placeholder}</label>
+				<div class="relative">
+					<input
+						type={field.type}
+						name={field.name}
+						class="w-full rounded-lg border-gray-200 p-4 pe-12 text-sm shadow-sm"
+						placeholder={field.placeholder}
+						bind:value={todo[field.name as keyof Todo]}
+					/>
+				</div>
 			</div>
-		</div>
-
-		<div>
-			<label for="description" class="sr-only">Beschreibung</label>
-
-			<div class="relative">
-				<input
-					type="text"
-					name="description"
-					class="w-full rounded-lg border-gray-200 p-4 pe-12 text-sm shadow-sm"
-					placeholder="Beschreibung hinzufügen"
-					bind:value={todo.description}
-				/>
-			</div>
-		</div>
+		{/each}
 
 		<div class="flex items-center justify-between">
 			<Button
 				label="Aufgabe anlegen"
-				type="submit"
+				type="button"
 				disabled={!todo.title || !todo.description}
-				onclick={() => submit()}
-			></Button>
+				onclick={submit}
+			/>
 		</div>
 	</form>
 </div>
