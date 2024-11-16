@@ -1,10 +1,3 @@
-export type { ButtonType, FormField, FormInputType } from './form.model';
-export type {
-	IButtonLinkProps,
-	IButtonProps,
-	IHeaderProps,
-	ITodoItemProps,
-	ITodoListProps
-} from './props.model';
-export { PriorityEnum } from './todo.model';
-export type { Todo } from './todo.model';
+export type { ButtonType } from './form.model';
+export type { IButtonLinkProps, IButtonProps, IHeaderProps, ITodoItemProps } from './props.model';
+export { Todo } from './todo.model';

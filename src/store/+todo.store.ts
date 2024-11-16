@@ -1,6 +1,6 @@
 import { browser } from '$app/environment';
 import { writable, type Writable } from 'svelte/store';
-import { PriorityEnum, type Todo } from '../model';
+import type { Todo } from '../model';
 
 export class TodoStore {
 	open: Todo[] = [];
@@ -30,101 +30,86 @@ export const TodosStore = createPersistedStore('todos', {
 			title: 'Einkaufen gehen',
 			description: 'Milch, Eier, Brot und Gemüse kaufen',
 			completed: false,
-			selected: false,
-			priority: PriorityEnum.Medium
+			selected: false
 		},
 		{
 			title: 'Bachelorarbeit schreiben',
 			description: 'Kapitel über Svelte-Framework fertigstellen',
 			completed: false,
-			selected: false,
-			priority: PriorityEnum.Low
+			selected: false
 		},
 		{
 			title: 'Fitnessstudio besuchen',
 			description: '1 Stunde Ausdauer und Krafttraining',
 			completed: false,
-			selected: false,
-			priority: PriorityEnum.Medium
+			selected: false
 		},
 
 		{
 			title: 'Einkaufen gehen',
 			description: 'Lebensmittel und Haushaltswaren besorgen',
 			completed: false,
-			selected: false,
-			priority: PriorityEnum.Medium
+			selected: false
 		},
 		{
 			title: 'Arzttermin wahrnehmen',
 			description: 'Jährliche Gesundheitsuntersuchung',
 			completed: false,
-			selected: false,
-			priority: PriorityEnum.Medium
+			selected: false
 		},
 		{
 			title: 'E-Mails bearbeiten',
 			description: 'Alle wichtigen E-Mails durchgehen und beantworten',
 			completed: false,
-			selected: false,
-			priority: PriorityEnum.Medium
+			selected: false
 		},
 		{
 			title: 'Projektbericht schreiben',
 			description: 'Fortschrittsbericht für das aktuelle Projekt erstellen',
 			completed: false,
-			selected: false,
-			priority: PriorityEnum.Medium
+			selected: false
 		},
 		{
 			title: 'Wohnung putzen',
 			description: 'Staubsaugen und Oberflächen abwischen',
 			completed: false,
-			selected: false,
-			priority: PriorityEnum.High
+			selected: false
 		},
 		{
 			title: 'Freunde treffen',
 			description: 'Treffen zum Abendessen vereinbaren',
 			completed: false,
-			selected: false,
-			priority: PriorityEnum.High
+			selected: false
 		},
 		{
 			title: 'Rechnung bezahlen',
 			description: 'Telefon- und Internetrechnung begleichen',
 			completed: false,
-			selected: false,
-			priority: PriorityEnum.High
+			selected: false
 		},
 		{
 			title: 'Buch lesen',
 			description: 'Kapitel 4 des aktuellen Buches durchlesen',
 			completed: false,
-			selected: false,
-			priority: PriorityEnum.High
+			selected: false
 		},
 		{
 			title: 'Joggen gehen',
 			description: '30 Minuten joggen im Park',
 			completed: false,
-			selected: false,
-			priority: PriorityEnum.High
+			selected: false
 		},
 		{
 			title: 'Familie anrufen',
 			description: 'Kurzes Gespräch mit den Eltern führen',
 			completed: false,
-			selected: false,
-			priority: PriorityEnum.Low
+			selected: false
 		}
 	],
 	completed: []
 });
 
-export const SearchStore = writable<string>('');
-
-export const PriorityFilterStore = writable<PriorityEnum | null>();
+export const SearchStore = writable('');
 
 export function addTodo(todo: Todo): void {
 	TodosStore?.update((store) => {
