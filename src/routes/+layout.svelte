@@ -5,7 +5,7 @@
 	const { children } = $props();
 </script>
 
-<div class="container flex h-screen flex-col justify-between">
+<div class="flex h-screen flex-col justify-between">
 	{@render children()}
 
 	<Nav />

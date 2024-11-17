@@ -2,7 +2,7 @@
 	import { SearchStore } from '../../store/+todo.store';
 </script>
 
-<div class="relative">
+<div class="relative mx-3 mb-3">
 	<label for="search" class="sr-only"> Neue Aufgabe hinzufügen </label>
 
 	<input
