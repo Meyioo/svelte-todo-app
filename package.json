@@ -12,7 +12,6 @@
 		"lint": "prettier --check . && eslint .",
 		"test:unit": "vitest",
 		"test": "npm run test:unit -- --run",
-		"predeploy": "npm run build",
 		"deploy": "gh-pages -d build"
 	},
 	"devDependencies": {

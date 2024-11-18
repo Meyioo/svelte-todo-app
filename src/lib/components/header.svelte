@@ -1,4 +1,5 @@
 <script lang="ts">
+	import { base } from '$app/paths';
 	import type { IHeaderProps } from '../../model';
 	import ButtonLink from './button-link.svelte';
 	import Searchbar from './searchbar.svelte';
@@ -14,7 +15,7 @@
 			</div>
 
 			<div class="flex items-center gap-4">
-				<ButtonLink href="/todo-anlegen" label="Neu"></ButtonLink>
+				<ButtonLink href="{base}/todo-anlegen" label="Neu"></ButtonLink>
 			</div>
 		</div>
 	</div>

@@ -1,4 +1,5 @@
 <script>
+	import { base } from '$app/paths';
 	import { page } from '$app/stores';
 	import { derived } from 'svelte/store';
 	import { closeSelectedTodos, TodosStore } from '../../store/+todo.store';
@@ -12,7 +13,7 @@
 			<div class="flex">
 				<div class="group flex-1">
 					<a
-						href="/"
+						href="{base}/"
 						class="mx-auto flex w-full items-end justify-center border-b-2 border-transparent px-4 pt-2 text-center text-gray-500"
 					>
 						<span class="block px-1 pb-2 pt-1">
@@ -36,7 +37,7 @@
 
 				<div class="group flex-1">
 					<a
-						href="/abgeschlossen"
+						href="{base}/abgeschlossen"
 						class="mx-auto flex w-full items-end justify-center border-b-2 border-transparent px-4 pt-2 text-center text-gray-500"
 					>
 						<span class="block px-1 pb-2 pt-1">
