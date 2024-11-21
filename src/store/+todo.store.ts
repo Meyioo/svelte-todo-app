@@ -121,7 +121,7 @@ export const TodosStore = createPersistedStore('todos', [
 export const SearchStore = writable('');
 
 export function addTodo(todo: ITodo): void {
-	TodosStore?.update((store) => {
+	TodosStore.update((store) => {
 		const nextId = store.todos.length > 0 ? Math.max(...store.todos.map((t) => t.id!), 0) + 1 : 1;
 		todo.id = nextId;
 		store.todos.push(todo);
@@ -130,7 +130,7 @@ export function addTodo(todo: ITodo): void {
 }
 
 export function selectTodo(todo: ITodo): void {
-	TodosStore?.update((store) => {
+	TodosStore.update((store) => {
 		const storedTodo = store.todos.find((t) => todo === t);
 		if (storedTodo) {
 			storedTodo.selected = !storedTodo.selected;
@@ -141,7 +141,7 @@ export function selectTodo(todo: ITodo): void {
 }
 
 export function completeSelectedTodos(): void {
-	TodosStore?.update((store) => {
+	TodosStore.update((store) => {
 		const updatedStore = { ...store };
 		updatedStore.todos.forEach((todo) => {
 			if (todo.selected) {
