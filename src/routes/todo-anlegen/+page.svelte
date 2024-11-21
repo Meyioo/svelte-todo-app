@@ -1,4 +1,5 @@
 <script lang="ts">
+	import { goto } from '$app/navigation';
 	import Button from '$lib/components/button.svelte';
 	import type { ITodo } from '../../model/todo.model';
 	import { addTodo } from '../../store/+todo.store';
@@ -18,6 +19,7 @@
 
 	function submit(): void {
 		addTodo(todo);
+		goto('/');
 	}
 </script>
 
