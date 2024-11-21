@@ -129,22 +129,6 @@ export function addTodo(todo: ITodo): void {
 	});
 }
 
-export function toggleTodoCompletion(index: number): void {
-	TodosStore?.update((store) => {
-		const updatedStore = { ...store };
-		updatedStore.todos[index].completed = !updatedStore.todos[index].completed;
-		return updatedStore;
-	});
-}
-
-export function removeTodo(index: number): void {
-	TodosStore?.update((store) => {
-		const updatedStore = { ...store };
-		updatedStore.todos.splice(index, 1);
-		return updatedStore;
-	});
-}
-
 export function selectTodo(todo: ITodo): void {
 	TodosStore?.update((store) => {
 		const storedTodo = store.todos.find((t) => todo === t);

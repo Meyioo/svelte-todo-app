@@ -7,7 +7,6 @@
 
 	const { completed = false }: ITodoListProps = $props();
 
-	// abgeleiteter Store zur Filterung der Todos basierend auf dem Suchtext und dem `completed`-Status
 	const todos = derived([TodosStore, SearchStore], ([$TodosStore, $SearchStore]) => {
 		const todos = $TodosStore.todos.filter((todo: Todo) => todo.completed === completed);
 		return $SearchStore.length > 0
