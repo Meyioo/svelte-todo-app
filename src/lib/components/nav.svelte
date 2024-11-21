@@ -2,7 +2,7 @@
 	import { base } from '$app/paths';
 	import { page } from '$app/stores';
 	import { derived } from 'svelte/store';
-	import { closeSelectedTodos, TodosStore } from '../../store/+todo.store';
+	import { completeSelectedTodos, TodosStore } from '../../store/+todo.store';
 
 	const selected = derived(TodosStore, (store) => store.todos?.some((todo) => todo.selected));
 </script>
@@ -28,7 +28,7 @@
 							class="mx-auto flex h-12 w-12 items-center justify-center rounded-full bg-blue-700 text-white disabled:bg-blue-500"
 							aria-label="Check"
 							disabled={!$selected}
-							onclick={() => closeSelectedTodos()}
+							onclick={() => completeSelectedTodos()}
 						>
 							<i class="fas fa-check"></i>
 						</button>
