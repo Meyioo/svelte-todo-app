@@ -32,7 +32,7 @@
 						name={field.name}
 						class="w-full rounded-lg border-gray-200 p-4 pe-12 text-sm shadow-sm"
 						placeholder={field.placeholder}
-						bind:value={todo[field.name as keyof Todo]}
+						bind:value={todo[field.name as keyof ITodo]}
 					/>
 				</div>
 			</div>
