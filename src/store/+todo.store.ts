@@ -140,7 +140,7 @@ export function selectTodo(todo: ITodo): void {
 	});
 }
 
-export function closeSelectedTodos(): void {
+export function completeSelectedTodos(): void {
 	TodosStore?.update((store) => {
 		const updatedStore = { ...store };
 		updatedStore.todos.forEach((todo) => {
