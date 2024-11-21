@@ -29,12 +29,6 @@
 			</p>
 		</div>
 	</div>
-
-	{#if todo.deadline}
-		<div class="text-sm text-gray-500">
-			Fälligkeit: {new Date(todo.deadline).toLocaleDateString()}
-		</div>
-	{/if}
 </div>
 
 <style>

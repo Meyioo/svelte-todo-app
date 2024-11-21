@@ -1,19 +1,22 @@
 <script lang="ts">
 	import Button from '$lib/components/button.svelte';
-	import type { Todo } from '../../model';
+	import type { ITodo } from '../../model/todo.model';
 	import { addTodo } from '../../store/+todo.store';
-	import { showToast } from '../../store/toast.store';
 
-	const todo: Todo = $state({ title: '', description: '', completed: false, selected: false });
+	const todo: ITodo = $state({
+		id: null,
+		title: '',
+		description: '',
+		completed: false,
+		selected: false
+	});
 
 	const fields = [
 		{ name: 'title', placeholder: 'Titel eingeben', type: 'text' },
-		{ name: 'description', placeholder: 'Beschreibung hinzufügen', type: 'text' },
-		{ name: 'deadline', placeholder: 'Fälligkeitsdatum', type: 'date' }
+		{ name: 'description', placeholder: 'Beschreibung hinzufügen', type: 'text' }
 	];
 
 	function submit(): void {
-		showToast('Formular erfolgreich abgeschickt!');
 		addTodo(todo);
 	}
 </script>

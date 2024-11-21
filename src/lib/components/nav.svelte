@@ -4,7 +4,7 @@
 	import { derived } from 'svelte/store';
 	import { closeSelectedTodos, TodosStore } from '../../store/+todo.store';
 
-	const selected = derived(TodosStore, (store) => store.open.some((todo) => todo.selected));
+	const selected = derived(TodosStore, (store) => store.todos?.some((todo) => todo.selected));
 </script>
 
 <div class="sticky bottom-0 w-full pt-5">

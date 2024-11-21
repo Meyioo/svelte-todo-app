@@ -1,6 +1,6 @@
 import type { MouseEventHandler } from 'svelte/elements';
 import type { ButtonType } from './form.model';
-import type { Todo } from './todo.model';
+import type { ITodo } from './todo.model';
 
 export interface IButtonLinkProps {
 	href: string;
@@ -20,7 +20,7 @@ export interface IHeaderProps {
 }
 
 export interface ITodoItemProps {
-	todo: Todo;
+	todo: ITodo;
 }
 
 export interface ITodoListProps {
