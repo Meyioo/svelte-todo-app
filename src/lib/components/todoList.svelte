@@ -7,13 +7,13 @@
 
 	const { completed = false }: ITodoListProps = $props();
 
-	const todos = derived([TodosStore, SearchStore], ([$TodosStore, $SearchStore]) => {
-		const todos = $TodosStore.todos.filter((todo: Todo) => todo.completed === completed);
-		return $SearchStore.length > 0
+	const todos = derived([TodosStore, SearchStore], ([$Todos, $SearchTerm]) => {
+		const todos = $Todos.filter((todo: Todo) => todo.completed === completed);
+		return $SearchTerm.length > 0
 			? todos.filter(
 					(todo: Todo) =>
-						todo.title.toLowerCase().includes($SearchStore.toLowerCase()) ||
-						todo.description.toLowerCase().includes($SearchStore.toLowerCase())
+						todo.title.toLowerCase().includes($SearchTerm.toLowerCase()) ||
+						todo.description.toLowerCase().includes($SearchTerm.toLowerCase())
 				)
 			: todos;
 	});

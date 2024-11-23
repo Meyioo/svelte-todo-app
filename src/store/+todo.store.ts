@@ -2,18 +2,15 @@ import { browser } from '$app/environment';
 import { writable, type Writable } from 'svelte/store';
 import type { ITodo } from '../model/todo.model';
 
-export class TodoStore {
-	todos: ITodo[] = [];
-}
-
 // Helper function to sync with localStorage
-function createPersistedStore(key: string, initialValue: ITodo[]): Writable<TodoStore> {
+function createPersistedStore(key: string, initialValue: ITodo[]): Writable<ITodo[]> {
 	if (!browser) {
-		return writable(new TodoStore());
+		const todos: ITodo[] = [];
+		return writable(todos);
 	}
 
 	const storedValue = localStorage.getItem(key);
-	const data = storedValue ? JSON.parse(storedValue) : { todos: initialValue };
+	const data = storedValue ? JSON.parse(storedValue) : initialValue;
 	const store = writable(data);
 
 	// Subscribe to changes and update localStorage
@@ -121,32 +118,32 @@ export const TodosStore = createPersistedStore('todos', [
 export const SearchStore = writable('');
 
 export function addTodo(todo: ITodo): void {
-	TodosStore.update((store) => {
-		const nextId = store.todos.length > 0 ? Math.max(...store.todos.map((t) => t.id!), 0) + 1 : 1;
+	TodosStore.update((todos) => {
+		const nextId = todos.length > 0 ? Math.max(...todos.map((t) => t.id!), 0) + 1 : 1;
 		todo.id = nextId;
-		store.todos.push(todo);
-		return store;
+		todos.push(todo);
+		return todos;
 	});
 }
 
 export function selectTodo(todo: ITodo): void {
-	TodosStore.update((store) => {
-		const storedTodo = store.todos.find((t) => todo === t);
+	TodosStore.update((todos) => {
+		const storedTodo = todos.find((t) => todo === t);
 		if (storedTodo) {
 			storedTodo.selected = !storedTodo.selected;
 		}
-		return store;
+		return todos;
 	});
 }
 
 export function completeSelectedTodos(): void {
-	TodosStore.update((store) => {
-		store.todos.forEach((todo) => {
+	TodosStore.update((todos) => {
+		todos.forEach((todo) => {
 			if (todo.selected) {
 				todo.completed = true;
 				todo.selected = false;
 			}
 		});
-		return store;
+		return todos;
 	});
 }
