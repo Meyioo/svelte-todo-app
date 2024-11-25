@@ -1,21 +1,21 @@
 <script lang="ts">
 	import TodoItem from '$lib/components/todoItem.svelte';
 	import { derived } from 'svelte/store';
-	import type { Todo } from '../../model';
+	import type { ITodo } from '../../model';
 	import type { ITodoListProps } from '../../model/props.model';
 	import { SearchStore, TodosStore } from '../../store/+todo.store';
 
 	const { completed = false }: ITodoListProps = $props();
 
 	const todos = derived([TodosStore, SearchStore], ([$Todos, $SearchTerm]) => {
-		const todos = $Todos.filter((todo: Todo) => todo.completed === completed);
-		return $SearchTerm.length > 0
-			? todos.filter(
-					(todo: Todo) =>
-						todo.title.toLowerCase().includes($SearchTerm.toLowerCase()) ||
+		return $Todos
+			.filter((todo: ITodo) => todo.completed === completed)
+			.filter((todo: ITodo) =>
+				$SearchTerm.length > 0
+					? todo.title.toLowerCase().includes($SearchTerm.toLowerCase()) ||
 						todo.description.toLowerCase().includes($SearchTerm.toLowerCase())
-				)
-			: todos;
+					: true
+			);
 	});
 </script>
 
