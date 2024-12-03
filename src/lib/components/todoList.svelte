@@ -1,6 +1,7 @@
 <script lang="ts">
 	import TodoItem from '$lib/components/todoItem.svelte';
 	import { derived } from 'svelte/store';
+	import { fade } from 'svelte/transition';
 	import type { ITodo } from '../../model';
 	import type { ITodoListProps } from '../../model/props.model';
 	import { SearchStore, TodosStore } from '../../store/+todo.store';
@@ -20,8 +21,10 @@
 </script>
 
 <main>
-	{#each $todos as todo}
-		<TodoItem {todo}></TodoItem>
+	{#each $todos as todo (todo.id)}
+		<div transition:fade>
+			<TodoItem {todo}></TodoItem>
+		</div>
 	{/each}
 
 	{#if $todos.length === 0}
