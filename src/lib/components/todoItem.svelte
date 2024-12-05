@@ -2,6 +2,7 @@
 	import { Checkbox } from 'flowbite-svelte';
 	import type { ITodoItemProps } from '../../model';
 	import { selectTodo } from '../../store/+todo.store';
+	import TodoItemPriority from './todoItem-priority.svelte';
 
 	const { todo }: ITodoItemProps = $props();
 
@@ -27,6 +28,9 @@
 			<p class="text-pretty text-right text-sm text-gray-700">
 				Fälligkeitsdatum: {new Date(todo.dueDate).toLocaleDateString()}
 			</p>
+			<div class="text-end">
+				<TodoItemPriority priority={todo.priority}></TodoItemPriority>
+			</div>
 		</div>
 	</div>
 </div>

@@ -1,4 +1,5 @@
 import { browser } from '$app/environment';
+import { PriorityLevel } from '$lib/constants/priority.constants';
 import { writable, type Writable } from 'svelte/store';
 import type { ITodo } from '../model/todo.model';
 
@@ -27,7 +28,8 @@ export const TodosStore = createPersistedStore('todos', [
 		description: 'Milch, Eier, Brot und Gemüse kaufen',
 		completed: false,
 		selected: false,
-		dueDate: new Date('2023-12-01')
+		dueDate: new Date('2023-12-01'),
+		priority: PriorityLevel.Medium
 	},
 	{
 		id: 2,
@@ -35,7 +37,8 @@ export const TodosStore = createPersistedStore('todos', [
 		description: 'Kapitel über Svelte-Framework fertigstellen',
 		completed: false,
 		selected: false,
-		dueDate: new Date('2023-12-02')
+		dueDate: new Date('2023-12-02'),
+		priority: PriorityLevel.High
 	},
 	{
 		id: 3,
@@ -43,7 +46,8 @@ export const TodosStore = createPersistedStore('todos', [
 		description: '1 Stunde Ausdauer und Krafttraining',
 		completed: false,
 		selected: false,
-		dueDate: new Date('2023-12-03')
+		dueDate: new Date('2023-12-03'),
+		priority: PriorityLevel.Low
 	},
 	{
 		id: 4,
@@ -51,7 +55,8 @@ export const TodosStore = createPersistedStore('todos', [
 		description: 'Lebensmittel und Haushaltswaren besorgen',
 		completed: false,
 		selected: false,
-		dueDate: new Date('2023-12-04')
+		dueDate: new Date('2023-12-04'),
+		priority: PriorityLevel.Medium
 	},
 	{
 		id: 5,
@@ -59,7 +64,8 @@ export const TodosStore = createPersistedStore('todos', [
 		description: 'Jährliche Gesundheitsuntersuchung',
 		completed: false,
 		selected: false,
-		dueDate: new Date('2023-12-05')
+		dueDate: new Date('2023-12-05'),
+		priority: PriorityLevel.Medium
 	},
 	{
 		id: 6,
@@ -67,7 +73,8 @@ export const TodosStore = createPersistedStore('todos', [
 		description: 'Alle wichtigen E-Mails durchgehen und beantworten',
 		completed: false,
 		selected: false,
-		dueDate: new Date('2023-12-06')
+		dueDate: new Date('2023-12-06'),
+		priority: PriorityLevel.High
 	},
 	{
 		id: 7,
@@ -75,7 +82,8 @@ export const TodosStore = createPersistedStore('todos', [
 		description: 'Fortschrittsbericht für das aktuelle Projekt erstellen',
 		completed: false,
 		selected: false,
-		dueDate: new Date('2023-12-07')
+		dueDate: new Date('2023-12-07'),
+		priority: PriorityLevel.High
 	},
 	{
 		id: 8,
@@ -83,7 +91,8 @@ export const TodosStore = createPersistedStore('todos', [
 		description: 'Staubsaugen und Oberflächen abwischen',
 		completed: false,
 		selected: false,
-		dueDate: new Date('2023-12-08')
+		dueDate: new Date('2023-12-08'),
+		priority: PriorityLevel.Medium
 	},
 	{
 		id: 9,
@@ -91,7 +100,8 @@ export const TodosStore = createPersistedStore('todos', [
 		description: 'Treffen zum Abendessen vereinbaren',
 		completed: false,
 		selected: false,
-		dueDate: new Date('2023-12-09')
+		dueDate: new Date('2023-12-09'),
+		priority: PriorityLevel.Medium
 	},
 	{
 		id: 10,
@@ -99,7 +109,8 @@ export const TodosStore = createPersistedStore('todos', [
 		description: 'Telefon- und Internetrechnung begleichen',
 		completed: false,
 		selected: false,
-		dueDate: new Date('2023-12-10')
+		dueDate: new Date('2023-12-10'),
+		priority: PriorityLevel.Medium
 	},
 	{
 		id: 11,
@@ -107,7 +118,8 @@ export const TodosStore = createPersistedStore('todos', [
 		description: 'Kapitel 4 des aktuellen Buches durchlesen',
 		completed: false,
 		selected: false,
-		dueDate: new Date('2023-12-11')
+		dueDate: new Date('2023-12-11'),
+		priority: PriorityLevel.Medium
 	},
 	{
 		id: 12,
@@ -115,7 +127,8 @@ export const TodosStore = createPersistedStore('todos', [
 		description: '30 Minuten joggen im Park',
 		completed: false,
 		selected: false,
-		dueDate: new Date('2023-12-12')
+		dueDate: new Date('2023-12-12'),
+		priority: PriorityLevel.Medium
 	},
 	{
 		id: 13,
@@ -123,7 +136,8 @@ export const TodosStore = createPersistedStore('todos', [
 		description: 'Kurzes Gespräch mit den Eltern führen',
 		completed: false,
 		selected: false,
-		dueDate: new Date('2023-12-13')
+		dueDate: new Date('2023-12-13'),
+		priority: PriorityLevel.Medium
 	}
 ]);
 

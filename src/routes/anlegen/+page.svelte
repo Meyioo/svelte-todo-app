@@ -1,8 +1,9 @@
 <script lang="ts">
 	import { goto } from '$app/navigation';
 	import Priority from '$lib/components/priority.svelte';
+	import { PriorityLevel } from '$lib/constants/priority.constants';
 	import { Button, Datepicker, Input, Label } from 'flowbite-svelte';
-	import { PriorityEnum, type ITodo } from '../../model/todo.model';
+	import type { ITodo } from '../../model';
 	import { addTodo } from '../../store/+todo.store';
 
 	const todo: ITodo = $state({
@@ -12,10 +13,10 @@
 		completed: false,
 		selected: false,
 		dueDate: new Date(),
-		priority: PriorityEnum.Low
+		priority: PriorityLevel.Low
 	});
 
-	function isDisabled(): boolean {
+	function formIsInvalid(): boolean {
 		return !todo.title || !todo.description || !todo.dueDate;
 	}
 
@@ -45,9 +46,9 @@
 	</div>
 	<div>
 		<Label class="mb-2">Priorität</Label>
-		<Priority {todo} />
+		<Priority bind:priority={todo.priority} />
 	</div>
 	<div class="flex items-center justify-between">
-		<Button type="button" onclick={submit} disabled={isDisabled()}>Aufgabe anlegen</Button>
+		<Button type="button" onclick={submit} disabled={formIsInvalid()}>Aufgabe anlegen</Button>
 	</div>
 </form>

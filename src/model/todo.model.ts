@@ -1,3 +1,5 @@
+import type { PriorityLevel } from '$lib/constants/priority.constants';
+
 export interface ITodo {
 	id: number | null;
 	title: string;
@@ -5,11 +7,5 @@ export interface ITodo {
 	completed: boolean;
 	selected: boolean;
 	dueDate: Date;
-	priority: PriorityEnum | null;
-}
-
-export enum PriorityEnum {
-	Low = 'low',
-	Medium = 'medium',
-	High = 'high'
+	priority: PriorityLevel;
 }
