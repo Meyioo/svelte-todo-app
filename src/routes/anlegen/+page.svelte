@@ -12,6 +12,7 @@
 		description: '',
 		completed: false,
 		selected: false,
+		createDate: new Date(),
 		dueDate: new Date(),
 		priority: PriorityLevel.Low
 	});

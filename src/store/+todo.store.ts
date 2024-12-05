@@ -55,3 +55,45 @@ export function completeSelectedTodos(): void {
 		return todos;
 	});
 }
+
+let priorityAscendingOrder = true;
+
+export function sortByPriority(): void {
+	const priorityOrder = { low: 1, medium: 2, high: 3 };
+	TodosStore.update((todos) => {
+		todos.sort((a, b) => {
+			const comparison = priorityOrder[a.priority] - priorityOrder[b.priority];
+			return priorityAscendingOrder ? comparison : -comparison;
+		});
+		priorityAscendingOrder = !priorityAscendingOrder;
+		return todos;
+	});
+}
+
+let dueDateAscendingOrder = true;
+
+export function sortByDueDate(): void {
+	TodosStore.update((todos) => {
+		todos.sort((a, b) => {
+			const dateA = new Date(a.dueDate).getTime();
+			const dateB = new Date(b.dueDate).getTime();
+			return dueDateAscendingOrder ? dateA - dateB : dateB - dateA;
+		});
+		dueDateAscendingOrder = !dueDateAscendingOrder;
+		return todos;
+	});
+}
+
+let createDateAscendingOrder = true;
+
+export function sortByCreateDate(): void {
+	TodosStore.update((todos) => {
+		todos.sort((a, b) => {
+			const dateA = new Date(a.createDate).getTime();
+			const dateB = new Date(b.createDate).getTime();
+			return createDateAscendingOrder ? dateA - dateB : dateB - dateA;
+		});
+		createDateAscendingOrder = !createDateAscendingOrder;
+		return todos;
+	});
+}
