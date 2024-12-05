@@ -6,7 +6,7 @@
 </script>
 
 <div>
-	<Header title="Abgeschlossene Aufgaben" showSearch={true} />
+	<Header title="Abgeschlossen" showSearch={true} />
 
 	{@render children()}
 </div>

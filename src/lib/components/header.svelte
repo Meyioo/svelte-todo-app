@@ -1,5 +1,7 @@
 <script lang="ts">
+	import { Button } from 'flowbite-svelte';
 	import type { IHeaderProps } from '../../model';
+	import { completeSelectedTodos } from '../../store/+todo.store';
 	import Searchbar from './searchbar.svelte';
 
 	const { title, showSearch = false }: IHeaderProps = $props();
@@ -11,6 +13,8 @@
 			<div>
 				<h1 class="text-2xl font-bold text-gray-900 sm:text-3xl">{title}</h1>
 			</div>
+
+			<Button size="sm" onclick={() => completeSelectedTodos()}>Abschließen</Button>
 		</div>
 	</div>
 	{#if showSearch}

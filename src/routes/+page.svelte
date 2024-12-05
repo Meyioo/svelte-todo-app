@@ -6,7 +6,7 @@
 </script>
 
 <div>
-	<Header title="Offene Aufgaben" showSearch={true} />
+	<Header title="Offen" showSearch={true} />
 
 	<TodoList {completed} />
 </div>
