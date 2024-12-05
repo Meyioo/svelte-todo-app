@@ -97,3 +97,21 @@ export function sortByCreateDate(): void {
 		return todos;
 	});
 }
+
+let selectedAscendingOrder = true;
+
+export function sortBySelected(): void {
+	TodosStore.update((todos) => {
+		todos.sort((a, b) => {
+			let comparison: number;
+			if (a.selected === b.selected) {
+				comparison = 0;
+			} else {
+				comparison = a.selected ? -1 : 1;
+			}
+			return selectedAscendingOrder ? comparison : -comparison;
+		});
+		selectedAscendingOrder = !selectedAscendingOrder;
+		return todos;
+	});
+}

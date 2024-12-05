@@ -26,7 +26,8 @@
 		</div>
 		<div class="ms-auto">
 			<p class="text-pretty text-right text-sm text-gray-700">
-				Fälligkeitsdatum: {new Date(todo.dueDate).toLocaleDateString()}
+				Fälligkeitsdatum: <br />
+				{new Date(todo.dueDate).toLocaleDateString()}
 			</p>
 			<div class="text-end">
 				<TodoItemPriority priority={todo.priority}></TodoItemPriority>

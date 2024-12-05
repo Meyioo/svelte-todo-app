@@ -5,6 +5,3 @@
 </script>
 
 <TodoList {completed} />
-
-<style>
-</style>
