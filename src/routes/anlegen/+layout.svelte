@@ -5,8 +5,10 @@
 	const { children } = $props();
 </script>
 
-<div class="container">
+<div>
 	<Header title="Aufgabe anlegen" />
 
-	{@render children()}
+	<div class="m-6 mx-auto max-w-screen-xl px-4 sm:px-6 lg:px-8">
+		{@render children()}
+	</div>
 </div>

@@ -1,32 +1,9 @@
-export type ButtonType = 'submit' | 'button' | 'reset';
-export type FormInputType =
-	| 'text'
-	| 'password'
-	| 'email'
-	| 'number'
-	| 'tel'
-	| 'url'
-	| 'search'
-	| 'date'
-	| 'time'
-	| 'datetime-local'
-	| 'month'
-	| 'week'
-	| 'color'
-	| 'file'
-	| 'hidden'
-	| 'image'
-	| 'range'
-	| 'reset'
-	| 'submit'
-	| 'button'
-	| 'checkbox'
-	| 'radio'
-	| 'select'
-	| 'textarea';
+import type { InputType } from 'flowbite-svelte';
 
-export type FormField = {
+export type ButtonType = 'submit' | 'button' | 'reset';
+export interface IFormField {
 	name: string;
+	label: string;
 	placeholder: string;
-	type: FormInputType;
-};
+	type: InputType;
+}

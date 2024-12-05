@@ -5,7 +5,7 @@
 	const { children } = $props();
 </script>
 
-<div class="container">
+<div>
 	<Header title="Abgeschlossene Aufgaben" showSearch={true} />
 
 	{@render children()}
