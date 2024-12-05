@@ -1,5 +1,4 @@
 <script lang="ts">
-	import { goto } from '$app/navigation';
 	import Priority from '$lib/components/priority.svelte';
 	import { PriorityLevel } from '$lib/constants/priority.constants';
 	import { Button, Datepicker, Input, Label } from 'flowbite-svelte';
@@ -23,7 +22,6 @@
 
 	function submit(): void {
 		addTodo(todo);
-		goto('/');
 	}
 </script>
 

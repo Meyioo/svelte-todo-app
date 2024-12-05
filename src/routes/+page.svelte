@@ -6,7 +6,7 @@
 </script>
 
 <div>
-	<Header title="Offen" showSearch={true} />
+	<Header title="Offen" showSearch={true} showCompleteBtn={true} />
 
 	<TodoList {completed} />
 </div>

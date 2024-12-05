@@ -5,7 +5,7 @@
 	import { completeSelectedTodos, TodosStore } from '../../store/+todo.store';
 	import Searchbar from './searchbar.svelte';
 
-	const { title, showSearch = false }: IHeaderProps = $props();
+	const { title, showSearch = false, showCompleteBtn = false }: IHeaderProps = $props();
 	const selectedCount = derived(
 		TodosStore,
 		($Todos) => $Todos.filter((todo) => todo.selected).length
@@ -18,7 +18,7 @@
 			<div>
 				<h1 class="text-2xl font-bold text-gray-900 sm:text-3xl">{title}</h1>
 			</div>
-			{#if $selectedCount > 0}
+			{#if showCompleteBtn && $selectedCount > 0}
 				<Button size="xs" onclick={() => completeSelectedTodos()}>
 					<Indicator
 						color="none"

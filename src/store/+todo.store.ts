@@ -2,6 +2,7 @@ import { browser } from '$app/environment';
 import { writable, type Writable } from 'svelte/store';
 import { DefaultTodos } from '../lib/constants/todos.constants';
 import type { ITodo } from '../model/todo.model';
+import { showToast } from './+toast.store';
 
 // Helper function to sync with localStorage
 function createPersistedStore(key: string, initialValue: ITodo[]): Writable<ITodo[]> {
@@ -32,6 +33,12 @@ export function addTodo(todo: ITodo): void {
 		todos.push(todo);
 		return todos;
 	});
+
+	showToast({
+		message: 'Aufgabe erfolgreich angelegt!',
+		duration: 3000,
+		color: 'bg-green-500'
+	});
 }
 
 export function selectTodo(todo: ITodo): void {
@@ -53,6 +60,12 @@ export function completeSelectedTodos(): void {
 			}
 		});
 		return todos;
+	});
+
+	showToast({
+		message: 'Aufgaben wurden abgeschlossen!',
+		color: 'bg-green-500',
+		duration: 3000
 	});
 }
 
