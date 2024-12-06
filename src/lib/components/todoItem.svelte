@@ -11,7 +11,7 @@
 	}
 </script>
 
-<div class="w-full border-b-2 p-2 text-left">
+<button class="w-full border-b-2 p-2 text-left" onclick={toggleSelection}>
 	<div class="flex">
 		{#if !todo.completed}
 			<div class="me-4 ms-2 flex items-center">
@@ -34,7 +34,7 @@
 			</div>
 		</div>
 	</div>
-</div>
+</button>
 
 <style>
 </style>

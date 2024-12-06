@@ -5,7 +5,7 @@
 	const { children } = $props();
 </script>
 
-<div>
+<div class="h-full">
 	<Header title="Aufgabe anlegen" />
 
 	<div class="m-6 mx-auto max-w-screen-xl px-4 sm:px-6 lg:px-8">
