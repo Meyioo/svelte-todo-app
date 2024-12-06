@@ -9,7 +9,7 @@
 <BottomNav
 	activeUrl={$activeUrl.url.pathname}
 	position="sticky"
-	classInner="grid-cols-3"
+	classInner="grid-cols-3 h-16"
 	classActive="active:text-primary-600 group-hover:text-primary-600"
 >
 	<BottomNavItem btnName="Offen" href="/">
