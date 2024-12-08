@@ -11,7 +11,7 @@
 	}
 </script>
 
-<button class="w-full border-b-2 p-2 text-left" onclick={toggleSelection}>
+<button class="w-full border-b-2 p-2 text-left" onclick={toggleSelection} disabled={todo.completed}>
 	<div class="flex">
 		{#if !todo.completed}
 			<div class="me-4 ms-2 flex items-center">
