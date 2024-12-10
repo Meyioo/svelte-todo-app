@@ -1,6 +1,5 @@
 <script lang="ts">
 	import Priority from '$lib/components/priority.svelte';
-	import { PriorityLevel } from '$lib/constants/priority.constants';
 	import { Button, Datepicker, Input, Label } from 'flowbite-svelte';
 	import type { ITodo } from '../../model';
 	import { addTodo } from '../../store/+todo.store';
@@ -12,12 +11,12 @@
 		completed: false,
 		selected: false,
 		createDate: new Date(),
-		dueDate: new Date(),
-		priority: PriorityLevel.Low
+		dueDate: null,
+		priority: null
 	});
 
 	function formIsInvalid(): boolean {
-		return !todo.title || !todo.description || !todo.dueDate;
+		return !todo.title || !todo.description || !todo.dueDate || !todo.priority;
 	}
 
 	function submit(): void {
@@ -41,7 +40,7 @@
 	</div>
 	<div>
 		<Label for="dueDate" class="mb-2">Fälligkeitsdatum</Label>
-		<Datepicker bind:value={todo.dueDate} required />
+		<Datepicker placeholder="Datum auswählen" bind:value={todo.dueDate} required />
 	</div>
 	<div>
 		<Label class="mb-2">Priorität</Label>

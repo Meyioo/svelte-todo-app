@@ -7,6 +7,6 @@ export interface ITodo {
 	description: string;
 	completed: boolean;
 	selected: boolean;
-	dueDate: Date;
-	priority: PriorityLevel;
+	dueDate: Date | null;
+	priority: PriorityLevel | null;
 }
