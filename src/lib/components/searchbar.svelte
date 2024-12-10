@@ -1,6 +1,9 @@
 <script>
-	import { Button, Dropdown, DropdownItem, Search } from 'flowbite-svelte';
-	import { FilterOutline } from 'flowbite-svelte-icons';
+	import FilterOutline from 'flowbite-svelte-icons/FilterOutline.svelte';
+	import Button from 'flowbite-svelte/Button.svelte';
+	import Dropdown from 'flowbite-svelte/Dropdown.svelte';
+	import DropdownItem from 'flowbite-svelte/DropdownItem.svelte';
+	import Search from 'flowbite-svelte/Search.svelte';
 	import {
 		SearchStore,
 		sortByCreateDate,

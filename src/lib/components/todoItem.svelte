@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { Checkbox } from 'flowbite-svelte';
+	import Checkbox from 'flowbite-svelte/Checkbox.svelte';
 	import type { ITodoItemProps } from '../../model';
 	import { selectTodo } from '../../store/+todo.store';
 	import TodoItemPriority from './todoItem-priority.svelte';
@@ -27,10 +27,10 @@
 		<div class="ms-auto">
 			<p class="text-pretty text-right text-sm text-gray-700">
 				Fälligkeitsdatum: <br />
-				{new Date(todo.dueDate).toLocaleDateString()}
+				{new Date(todo.dueDate!).toLocaleDateString()}
 			</p>
 			<div class="text-end">
-				<TodoItemPriority priority={todo.priority}></TodoItemPriority>
+				<TodoItemPriority priority={todo.priority!}></TodoItemPriority>
 			</div>
 		</div>
 	</div>

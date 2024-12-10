@@ -1,8 +1,11 @@
 <script>
 	import { base } from '$app/paths';
 	import { page } from '$app/stores';
-	import { BottomNav, BottomNavItem } from 'flowbite-svelte';
-	import { CirclePlusSolid, ClipboardCheckSolid, HomeSolid } from 'flowbite-svelte-icons';
+	import CirclePlusSolid from 'flowbite-svelte-icons/CirclePlusSolid.svelte';
+	import ClipboardCheckSolid from 'flowbite-svelte-icons/ClipboardCheckSolid.svelte';
+	import HomeSolid from 'flowbite-svelte-icons/HomeSolid.svelte';
+	import BottomNav from 'flowbite-svelte/BottomNav.svelte';
+	import BottomNavItem from 'flowbite-svelte/BottomNavItem.svelte';
 
 	const activeUrl = $state(page);
 </script>

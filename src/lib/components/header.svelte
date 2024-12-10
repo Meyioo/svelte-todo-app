@@ -1,5 +1,6 @@
 <script lang="ts">
-	import { Button, Indicator } from 'flowbite-svelte';
+	import Button from 'flowbite-svelte/Button.svelte';
+	import Indicator from 'flowbite-svelte/Indicator.svelte';
 	import { derived } from 'svelte/store';
 	import type { IHeaderProps } from '../../model';
 	import { completeSelectedTodos, TodosStore } from '../../store/+todo.store';

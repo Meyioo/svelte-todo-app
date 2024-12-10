@@ -2,7 +2,6 @@
 	import { Priorities, type PriorityLevel } from '$lib/constants/priority.constants';
 
 	const { priority }: { priority: PriorityLevel } = $props();
-
 	const { label, color } = Priorities[priority];
 </script>
 

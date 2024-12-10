@@ -1,6 +1,9 @@
 <script lang="ts">
 	import Priority from '$lib/components/priority.svelte';
-	import { Button, Datepicker, Input, Label } from 'flowbite-svelte';
+	import Button from 'flowbite-svelte/Button.svelte';
+	import Datepicker from 'flowbite-svelte/Datepicker.svelte';
+	import Input from 'flowbite-svelte/Input.svelte';
+	import Label from 'flowbite-svelte/Label.svelte';
 	import type { ITodo } from '../../model';
 	import { addTodo } from '../../store/+todo.store';
 
