@@ -1,6 +1,4 @@
 <script lang="ts">
-	import Button from 'flowbite-svelte/Button.svelte';
-	import Indicator from 'flowbite-svelte/Indicator.svelte';
 	import { derived } from 'svelte/store';
 	import type { IHeaderProps } from '../../model';
 	import { completeSelectedTodos, TodosStore } from '../../store/+todo.store';
@@ -20,13 +18,14 @@
 				<h1 class="text-2xl font-bold text-gray-900 sm:text-3xl">{title}</h1>
 			</div>
 			{#if showCompleteBtn && $selectedCount > 0}
-				<Button size="xs" onclick={() => completeSelectedTodos()}>
-					<Indicator
-						color="none"
-						class="me-2 bg-primary-200 text-xs font-semibold text-primary-800"
-						size="lg">{$selectedCount}</Indicator
+				<button
+					class="rounded-md bg-blue-700 px-3 py-1 text-white hover:bg-blue-800"
+					onclick={() => completeSelectedTodos()}
+				>
+					<span class="text-primary-800 me-2 rounded-full bg-white px-2 font-semibold text-gray-700"
+						>{$selectedCount}</span
 					>
-					Abschließen</Button
+					Abschließen</button
 				>
 			{/if}
 		</div>

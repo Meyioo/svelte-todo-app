@@ -31,6 +31,3 @@
 		<p class="mt-3 text-center text-gray-500">Keine Aufgaben gefunden</p>
 	{/if}
 </main>
-
-<style>
-</style>

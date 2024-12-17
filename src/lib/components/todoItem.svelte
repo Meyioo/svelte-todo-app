@@ -1,5 +1,4 @@
 <script lang="ts">
-	import Checkbox from 'flowbite-svelte/Checkbox.svelte';
 	import type { ITodoItemProps } from '../../model';
 	import { selectTodo } from '../../store/+todo.store';
 	import TodoItemPriority from './todoItem-priority.svelte';
@@ -15,7 +14,7 @@
 	<div class="flex">
 		{#if !todo.completed}
 			<div class="me-4 ms-2 flex items-center">
-				<Checkbox checked={todo.selected}></Checkbox>
+				<input type="checkbox" checked={todo.selected}/>
 			</div>
 		{/if}
 		<div>
@@ -36,5 +35,3 @@
 	</div>
 </button>
 
-<style>
-</style>
