@@ -23,22 +23,22 @@
 	}
 </script>
 
-<div class="mb-6 md:flex">
-	<div class="mb-6 md:mb-0 md:w-1/2">
-		<label class="text-grey-darker mb-2 block text-xs" for="grid-first-name"> Titel </label>
+<div class="grid">
+	<div class="mb-6 md:w-1/2">
+		<label class="mb-2 block" for="title"> Titel </label>
 		<input
-			class="bg-grey-lighter text-grey-darker border-red mb-3 block w-full appearance-none rounded border px-4 py-3"
-			id="grid-first-name"
+			class="block w-full rounded border-gray-300 px-4 py-3"
+			id="title"
 			type="text"
 			placeholder="Titel eingeben"
 			bind:value={todo.title}
 		/>
 	</div>
 	<div class="mb-6 md:w-1/2">
-		<label class="text-grey-darker mb-2 block text-xs" for="grid-last-name"> Beschreibung </label>
+		<label class="mb-2 block" for="description"> Beschreibung </label>
 		<input
-			class="bg-grey-lighter text-grey-darker border-grey-lighter block w-full appearance-none rounded border px-4 py-3"
-			id="grid-last-name"
+			class="block w-full rounded border-gray-300 px-4 py-3"
+			id="description"
 			type="text"
 			placeholder="Beschreibung eingeben"
 			bind:value={todo.description}
@@ -46,25 +46,23 @@
 	</div>
 
 	<div class="mb-6 md:w-1/2">
-		<label class="text-grey-darker mb-2 block text-xs" for="grid-last-name">
-			Fälligkeitsdatum
-		</label>
+		<label class=" mb-2 block" for="dueDate"> Fälligkeitsdatum </label>
 		<input
-			class="bg-grey-lighter text-grey-darker border-grey-lighter block w-full appearance-none rounded border px-4 py-3"
-			id="grid-last-name"
+			class="block w-full rounded border-gray-300 px-4 py-3"
+			id="dueDate"
 			type="date"
 			bind:value={todo.dueDate}
 		/>
 	</div>
 
 	<div class="mb-6 md:w-1/2">
-		<label class="text-grey-darker mb-2 block text-xs" for="grid-last-name"> Priorität </label>
+		<label class="mb-2 block" for="priority"> Priorität </label>
 		<Priority bind:priority={todo.priority} />
 	</div>
 
 	<button
 		type="button"
-		class="rounded-lg bg-blue-700 p-2 px-4 text-white disabled:bg-blue-500"
+		class="w-max rounded-lg bg-blue-700 p-2 px-4 text-white disabled:bg-blue-500"
 		onclick={submit}
 		disabled={formIsInvalid()}>Aufgabe anlegen</button
 	>
