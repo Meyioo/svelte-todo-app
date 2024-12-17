@@ -9,6 +9,8 @@
 	<div class="mx-auto w-full">
 		<div class=" bg-white px-7 shadow-lg">
 			<div class="flex">
+				{$activeUrl.url.pathname === base + '/'}
+				{$activeUrl.url.pathname === base + '/abgeschlossen'}
 				<div class="group flex-1">
 					<a
 						href="{base}/"
@@ -16,7 +18,7 @@
 					>
 						<span class="block px-1 pb-2 pt-1">
 							<svg
-								class="mx-auto h-6 w-6 {$activeUrl.url.pathname === '/'
+								class="mx-auto h-6 w-6 {$activeUrl.url.pathname === base + '/'
 									? 'fill-blue-800'
 									: 'fill-gray-800'}"
 								xmlns="http://www.w3.org/2000/svg"
@@ -36,7 +38,7 @@
 						class="mx-auto flex w-full items-end justify-center border-b-2 border-transparent px-4 pt-2 text-center text-gray-500"
 					>
 						<span
-							class="block px-1 pb-2 pt-1 {$activeUrl.url.pathname === '/abgeschlossen'
+							class="block px-1 pb-2 pt-1 {$activeUrl.url.pathname === base + '/abgeschlossen'
 								? 'fill-blue-800'
 								: 'fill-gray-800'}"
 						>
@@ -57,7 +59,7 @@
 					>
 						<span class="block px-1 pb-2 pt-1">
 							<svg
-								class="mx-auto h-6 w-6 {$activeUrl.url.pathname === '/anlegen'
+								class="mx-auto h-6 w-6 {$activeUrl.url.pathname === base + '/anlegen'
 									? 'fill-blue-800'
 									: 'fill-gray-800'}"
 								xmlns="http://www.w3.org/2000/svg"
