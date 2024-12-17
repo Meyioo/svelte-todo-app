@@ -9,8 +9,6 @@
 	<div class="mx-auto w-full">
 		<div class=" bg-white px-7 shadow-lg">
 			<div class="flex">
-				{$activeUrl.url.pathname === base + '/'}
-				{$activeUrl.url.pathname === base + '/abgeschlossen'}
 				<div class="group flex-1">
 					<a
 						href="{base}/"
